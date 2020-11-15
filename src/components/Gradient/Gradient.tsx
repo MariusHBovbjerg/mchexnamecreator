@@ -1,25 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {ColorPicker} from "./ColorPicker";
 interface GradientProps {
-
+    colorCodes:string[],
+    setColours: React.Dispatch<React.SetStateAction<string[]>>,
 }
 
-export const Gradient: React.FC<GradientProps> = ({}) => {
+export const Gradient: React.FC<GradientProps> = ({colorCodes, setColours}) => {
 
-    let colourCount = 1;
+    let colourCount = 2;
+    
+    let [Colour, setColour] = useState("");
 
     const handleColourChange = (index: number, colourcode: string) => {
         console.log(`Index: ${index}\nColourcode: ${colourcode}`)
     }
 
-    const colourCodes: string[] = [];
     const colourPickers: JSX.Element[] = [];
 
     for (let i = 0; i < colourCount; i++) {
         colourPickers.push(
-            //<ColorPicker bo key={i}/>
-        )      
+            <ColorPicker color={Colour} setColor={setColour}/>
+            
+        )
+        
+        colorCodes[i] = Colour;
     }
+
+    setColours(colorCodes);
 
     return (
         <>

@@ -13,6 +13,8 @@ function App() {
   let [strikethrough, setStrikethrough] = useState(false)
   let [name, setName] = useState("");
 
+  let [colours, setColour] = useState(["",""])
+
 
   return (
     <div className="App">
@@ -29,7 +31,13 @@ function App() {
         </div>
         <div>
 
-        <Gradient />
+        <Gradient colorCodes={colours} setColours={setColour}/>
+      
+        
+        <p>{colours[0]}</p>
+        <p>{colours[1]}</p>
+        <p>{colours[2]}</p>
+         
         {/*
         
         Gradient kode her lol
@@ -40,7 +48,7 @@ function App() {
         <div>
         <OutputBox 
         coloured={coloured}
-        colours={[]}
+        colours={colours}
         name={name}
         underlined={underlined}
         bold={bold}
