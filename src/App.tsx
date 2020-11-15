@@ -1,15 +1,55 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Gamer } from './components/Gamer/Gamer';
+import React, { useState } from 'react';
+import { CheckBox } from './components/CheckBox/CheckBox';
+import { Gradient } from './components/Gradient/Gradient';
+import { NameInput } from './components/NameInput/NameInput';
+import { OutputBox } from './components/OutputBox/OutputBox';
 
 function App() {
+
+  let [coloured, setColoured] = useState(false)
+  let [underlined, setUnderlined] = useState(false)
+  let [bold, setBold] = useState(false)
+  let [italicized, setItalicized] = useState(false)
+  let [strikethrough, setStrikethrough] = useState(false)
+  let [name, setName] = useState("");
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Gamer textToDisplay="lol"/>
-          
+      <header>
+        <div>
+        <NameInput name={name} setName={setName} />
+        </div>
+        <div>
+        <CheckBox checkBoxName="Colour" checked={coloured} setChecked={setColoured}/>
+        <CheckBox checkBoxName="Underline" checked={underlined} setChecked={setUnderlined}/>
+        <CheckBox checkBoxName="Bold" checked={bold} setChecked={setBold}/>
+        <CheckBox checkBoxName="Italics" checked={italicized} setChecked={setItalicized}/>
+        <CheckBox checkBoxName="Strikethrough" checked={strikethrough} setChecked={setStrikethrough}/>
+        </div>
+        <div>
+
+        <Gradient />
+        {/*
+        
+        Gradient kode her lol
+        
+        */}
+
+        </div>
+        <div>
+        <OutputBox 
+        coloured={coloured}
+        colours={[]}
+        name={name}
+        underlined={underlined}
+        bold={bold}
+        italicized={italicized}
+        strikethrough={strikethrough}/>
+        </div>
+
+      
+      
       </header>
     </div>
   );
