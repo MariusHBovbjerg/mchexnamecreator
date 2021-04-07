@@ -20,6 +20,8 @@ function App() {
     <div className="App">
       <header>
 
+        <h1 style={{}}>Minecraft Hex Nick name generator</h1>
+
         <div>
           <NameInput name={name} setName={setName} />
         </div>

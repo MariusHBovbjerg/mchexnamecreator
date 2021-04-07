@@ -58,7 +58,7 @@ export const OutputBox: React.FC<OutputBoxProps> = ({coloured, colours, name, un
             
 		    newName = newName + name[i-1+power];
 
-            if(i/res === 1 && (power + i) != name.length){
+            if(i/res === 1 && (power + i) !== name.length){
                 colorVal++;
                 
                 newName= newName + "&" + colours[colorVal] + code;
@@ -70,11 +70,11 @@ export const OutputBox: React.FC<OutputBoxProps> = ({coloured, colours, name, un
         }
     }
     else{
-        for(var i = 0; i < name.length; i++){
+        for(var j = 0; j < name.length; j++){
             
             newName += code;
 
-            newName += name[i];
+            newName += name[j];
         }
     }
     return (
@@ -83,7 +83,7 @@ export const OutputBox: React.FC<OutputBoxProps> = ({coloured, colours, name, un
                 <Input.TextArea
                     value={newName}
                     disabled
-                    style={{width:400, height:100}}
+                    style={{width:400, height:100, fontSize:"25px",backgroundColor:"#1A1919",borderColor:"#1A1919",color:"#FFFFFF"}}
                      
                 />
                 <Button 
