@@ -58,7 +58,7 @@ export const GradientProvider: React.FC<GradientProviderProps> = ({IsChecked, co
                     shape="circle" 
                     size="large"
                     icon={<PlusOutlined />}
-                    style={{position:'relative',margin:4}}
+                    style={{position:'relative',margin:4,left:"23rem"}}
                     onClick={(e) => {
                         if(Amount<6){
                             setAmount(Amount+1);
@@ -71,15 +71,15 @@ export const GradientProvider: React.FC<GradientProviderProps> = ({IsChecked, co
                     shape="circle" 
                     size="large"
                     icon={<MinusOutlined />}
-                    style={{position:'relative',margin:4}}
+                    style={{position:'relative',margin:4,left:"23rem"}}
                     onClick={(e) => {
                         if(Amount>0){
                             setAmount(Amount-1);
                         }
                     }} 
                 />
-                <p style={{margin:4}}>Active Colours {Amount}</p>
-                <div style={{display:"flex",flexDirection:"row",flexWrap:"wrap"}}>
+                <p style={{position:'relative',margin:4,left:345}}>Active Colours {Amount}</p>
+                <div style={{position:'relative',display:"flex",flexDirection:"row",flexWrap:"wrap",left:60}}>
                     
                     {colourPickers}
         

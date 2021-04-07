@@ -19,52 +19,52 @@ function App() {
   return (
     <div className="App">
       <header>
+        <div style={{maxWidth: "600px", margin: "auto"}}>
+          <h1>Minecraft Hex Nick name generator</h1>
 
-        <h1 style={{}}>Minecraft Hex Nick name generator</h1>
+          <div>
+            <NameInput name={name} setName={setName} />
+          </div>
 
-        <div>
-          <NameInput name={name} setName={setName} />
+
+          <div style={{position:"relative",left:15}}>
+            <CheckBox 
+            checkBoxName="Colours" 
+            checked={coloured} 
+            setChecked={setColoured}
+            />
+
+            <CheckBox 
+            checkBoxName="Underline" 
+            checked={underlined} 
+            setChecked={setUnderlined}
+            />
+
+            <CheckBox 
+            checkBoxName="Bold" 
+            checked={bold} 
+            setChecked={setBold}
+            />
+
+            <CheckBox 
+            checkBoxName="Italics" 
+            checked={italicized} 
+            setChecked={setItalicized}
+            />
+
+            <CheckBox 
+            checkBoxName="Strikethrough"
+            checked={strikethrough} 
+            setChecked={setStrikethrough}
+            />
+          </div>
         </div>
-
-
-        <div>
-          <CheckBox 
-          checkBoxName="Colours" 
-          checked={coloured} 
-          setChecked={setColoured}
-          />
-
-          <CheckBox 
-          checkBoxName="Underline" 
-          checked={underlined} 
-          setChecked={setUnderlined}
-          />
-
-          <CheckBox 
-          checkBoxName="Bold" 
-          checked={bold} 
-          setChecked={setBold}
-          />
-
-          <CheckBox 
-          checkBoxName="Italics" 
-          checked={italicized} 
-          setChecked={setItalicized}
-          />
-
-          <CheckBox 
-          checkBoxName="Strikethrough"
-           checked={strikethrough} 
-           setChecked={setStrikethrough}
-           />
-        </div>
-
-        <div style={{display:'flex',flexDirection:'row'}}>
+        <div style={{display:'flex',flexDirection:'row', maxWidth: "900px", margin: "auto"}}>
           <GradientProvider IsChecked={coloured} colorCodes={colour} setColours={setColour} Amount={Amount} setAmount={setAmount}/>
         </div>
 
 
-        <div>
+        <div style={{display:'flex',flexDirection:'row', maxWidth: "500px", margin: "auto"}}>
           <OutputBox 
           coloured={coloured}
           colours={colour}

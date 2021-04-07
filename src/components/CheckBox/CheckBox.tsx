@@ -1,4 +1,5 @@
 import React from 'react'
+import './CheckBox.css';
 
 interface CheckBoxProps {
     checked: boolean,
@@ -11,11 +12,11 @@ export const CheckBox: React.FC<CheckBoxProps> = ({checked,checkBoxName,setCheck
     
     return (
         <>
-            <input className="checkBox" type="checkbox" checked={checked} onChange={(e)=>{
+            <input className="checkBox" type="checkbox" id={checkBoxName} checked={checked} onChange={(e)=>{
 
                 setChecked(e.target.checked);
             }}/>
-            {checkBoxName}
+            <label style={{margin:4}} htmlFor={checkBoxName}>{checkBoxName}</label>
         </>
     );
 }
