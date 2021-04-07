@@ -9,9 +9,11 @@ interface NameInputProps {
 export const NameInput: React.FC<NameInputProps> = ({name, setName}) => {
     return (
         <>
-           <Input placeholder="Nickname" value={name} onChange={(e) => {
-               setName(e.target.value);
-           }}/>
+            <div style={{margin:8}}>
+                <Input.TextArea style={{ width:350, height:20 }} placeholder="Nickname" value={name} onChange={(e) => {
+                    setName(e.target.value);
+                }}/>
+           </div>
         </>
     );
 }
