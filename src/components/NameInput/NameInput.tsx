@@ -1,19 +1,22 @@
 import { Input } from 'antd';
-import React from 'react'
+import React from 'react';
+import './NameInput.css'; // Assuming styles are moved to NameInput.css
 
 interface NameInputProps {
-    name:string,
-    setName: any,
+    name: string;
+    setName: (value: string) => void; // More specific type for setName
 }
 
-export const NameInput: React.FC<NameInputProps> = ({name, setName}) => {
+export const NameInput: React.FC<NameInputProps> = ({ name, setName }) => {
     return (
-        <>
-            <div style={{margin:8}}>
-                <Input.TextArea style={{ position:"relative", width:510, height:30, fontSize:"25px",backgroundColor:"#E8E7E7",borderColor:"#E8E7E7"}} placeholder="Nickname" value={name} onChange={(e) => {
-                    setName(e.target.value);
-                }}/>
-           </div>
-        </>
+        <div className="name-input-container">
+            <Input.TextArea
+                className="name-input"
+                placeholder="Nickname"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                aria-label="Nickname"
+            />
+        </div>
     );
-}
+};

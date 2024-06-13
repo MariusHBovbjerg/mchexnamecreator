@@ -1,0 +1,12 @@
+.name-input-container {
+    margin: 8px;
+}
+
+.name-input {
+    position: relative;
+    width: 510px;
+    height: 30px;
+    font-size: 25px;
+    background-color: #E8E7E7;
+    border-color: #E8E7E7;
+}
